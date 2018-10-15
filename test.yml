@@ -10,8 +10,9 @@
     auth_ldap_0_uname_attr: sAMAccountName
     auth_ldap_0_use_ssl: always
     auth_module_type: ldap
-  vars_files:
-    - test-cert.yml
+  # Removed because there are no tests for SSL copying yet.
+  # vars_files:
+  #   - test-cert.yml
   tasks:
   - include: tasks/main.yml
   handlers:
