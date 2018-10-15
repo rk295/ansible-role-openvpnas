@@ -1,6 +1,6 @@
 # Ansible role: openvpn as configure
 
-[![Build Status](https://travis-ci.org/rk295/test-openvpnas.svg?branch=master)](https://travis-ci.org/rk295/test-openvpnas)
+[![Build Status](https://travis-ci.org/rk295/openvpnas-role.svg?branch=master)](https://travis-ci.org/rk295/openvpnas-role)
 
 This role enables idempotent configuration of the [OpenVPN Access Server] via the vendor provided [sacli] utility.
 
