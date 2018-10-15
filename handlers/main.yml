@@ -1,0 +1,2 @@
+- name: restart
+  command:  "/usr/local/openvpn_as/scripts/sacli start"

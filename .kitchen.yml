@@ -1,0 +1,64 @@
+---
+driver:
+  aws_ssh_key_id: travis_key
+  instance_type: m4.large
+  name: ec2
+  region: eu-west-1
+  security_group_ids: ["sg-0039ae3576be6d1c3"]
+  subnet_id: subnet-5d97383a
+  tags:
+    Name: "openvpnas-kitchen"
+    Creator: "test-kitchen"
+  vpc_id: "vpc-281db64f"
+
+# AMI this ansible inside
+platforms:
+  - name: openvpn-as
+    driver:
+      image_id: ami-3ed28747
+      # This is needed to prevent OpenVPN running the wizzard on first boot
+      user_data: |
+        admin_user=openvpn
+        admin_pw=password
+
+transport:
+  connection_retries: 5
+  connection_timeout: 10
+  ssh_key: .ssh/travis_key
+  username: openvpnas
+
+provisioner:
+  ansible_connection: ssh
+  ansible_sudo: true
+  ansible_verbose: true
+  ansible_verbosity: 2
+  # The OpenVPN AS AMI has a "apt upgrade" which runs on first boot. This causes
+  # ansible-kitchen to fail to install ansible. This loop is a a horrible attempt
+  # at blocking the ansible install until that upgrade releases the apt lock.
+  custom_pre_install_command: |
+    echo "Looping, waiting for dpkg lock to be released" ;\
+    sudo /bin/sh -c '\
+      systemctl stop apt-daily ;\
+      while fuser /var/lib/dpkg/lock > /dev/null 2>&1 ;do \
+        echo "waiting for apt lock to be released, sleeping for 1s"; \
+        sleep 30; \
+      done'
+  hosts: test-kitchen
+  name: ansible_playbook
+  # private_key: .ssh/travis_key
+  require_ansible_omnibus: false
+  require_ansible_repo: true
+  require_chef_for_busser: false
+
+verifier:
+  name: serverspec
+  use_sudo: yes
+  sudo_path: true
+
+suites:
+  - name: default
+    # env_vars:
+    #   SSH_KEY: .ssh/travis_key
+    verifier:
+      patterns:
+        - roles/openvpnas/test/integration/default/serverspec/default_spec.rb

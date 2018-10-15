@@ -1,0 +1,23 @@
+language: generic
+before_install:
+- mkdir .ssh || true
+- openssl aes-256-cbc -K $encrypted_2acd64e68e77_key -iv $encrypted_2acd64e68e77_iv
+  -in .ssh/ssh_keys.tar.enc -out .ssh/ssh_keys.tar -d
+- "( cd .ssh && tar xf ssh_keys.tar )"
+- ls -l .ssh/
+- sudo apt-get update -qq
+- sudo apt-get install -qq python-apt python-pycurl ruby
+- gem install bundle
+install:
+- sudo pip install ansible>=1.6.0
+- bundle install
+script:
+- echo localhost > inventory
+- ansible-playbook --syntax-check -i inventory test.yml
+- kitchen list
+- kitchen test
+env:
+  global:
+  - secure: VP/2Y+pomo6j6PVLkRffEztZw9cYxtYObRuysYPOdFqStHboMIXDgNElXo/J8kRtTvJOZ41n2HYWH+3IeYhj8b9NoMriBXbbEoCIOj+v7X35vMQnUz3876SCHOL8U9sTDAkI7kfC2AiwU4qmFgckGJ+tPBfJAAC73VJE58O/eMvDuYSUQK+xiavWe2YhDMmAJJmJLcECdJ+gpW7DtEwti8M+l6jJpE0eMTNGIS/aGdqB+fsFcw5oRTeKBRuKHsTg0PGW/pRJ9st6s7D1jBImyUiKwqXVeoxg9veZR3fpSJ3oF7GEjYFnpS0bJTjiW4l2N3B0WTtsSneavKke1tFeXTrGhMtC8g6e0BXKot+A0NMwBCV9awuPUUQH0POkX0R7YfUeUo4g/ErrA76mVLpBtUr6m7QJ6huWFS/nM3xfMFe5UqBT9RzSfAICJYaNrU9vPipdNYaxf9Bwn9NT20D5iBCRnDp3jfS6BX2NqW0LU8DDZaPwFeKnds5D08fkmsBgE0eQqxHU1rgiPw5svxcnDuHdgqj9nqT+ZvYhIlk+SBnYsT0sfoiDSSngh8NL7TpD5AyX8BNUVMFH2MCDQ/+KvOW9aLOk7vuIuxIetEK5D7iMQeN8hLZmxFU2ieTC+WC8W30h/DqJifd0JqzzjjlLMbmdLpBJrtQdXMhbXi1X3z0=
+  - secure: F3IRLmS+iz76+8mR7mWiGxhji5srj7/U9GoZG/f3VZoCKLP8huHt1a5OAJBc2iAKfCFZ+Wjuial5AV8+xDzWPjQhtaUlBaovXbcM7lGYBnHvrzF5hVYA/13QWPKHZc0T/7Rlc7SHbc5hxr4k+OxCXIJm2jcIyOOoPR3H7BrToQ890YLLKDDaFfuT81vXXEHsPF7sMIKYpCQFhosbJ/sLa475OHbuBwZIpqYXh0vo8fXsu3u+mKBkzK3a6f8S2h7YvaazTjhyZCTrD/ZCOzSgPSMVOIgkwguMzBOgGl7y+4uB+5RyOiBV7/jPBRQF2jvRpX4MDE/oxwyQbkaShlEZGEsAmx6FHOEjLSjT69rlTwt37P3lt7BCgvXQMAMs90LGIPzIEjODnl5dK2Z3ra53SOhEB438JddIS3SGB/jzZOkLSpulTtTw77y41Cn702JDRtkspS7iVf/N4A1MuF8vCIMKwYFQvtH8oZoUICVKF6dygrCYKK4H92hcU7zcgdFC0yXIhAIJ3SxrUN6DUSE/p7q6YpuEssbi/YDxCDWENyeDpzQuEMzEqgUUw+97N8F8zEFB/10KFUA3bEuZB3pYlu1nIONBDnmwILP7Iv0GyALTO4i7A1sQV0uFDt7gXyDWme25rYBTJWVSxYPzHATzld4tlLQ6ZHmcmfGmbMDoUZU=
+  - secure: QslIxqjbe8YN5ipgkSdmNyt3q+8a3SKrqpc5/OgVGjQ0H5GrEXG/sv/iv+OBZS7JGDsk6LNP/8c6c53Kg2fJHyg/6lNImHFOcejX42gwprTsm8uuSZciPhJEHERm4y05JKCLzHMxZAXT3PVvwpykuPfd5Jk8UEjQZXs1irfBuJR0u0JT4fpRnMit2gCx2X7A2+ByS9iVRMHuLh5tBp8pVfdjvMXYsgtA8pF3sqQgLJ2rvGPNRcFR66Y60Ye5EAPa9Cighfp70NbLkLvjtWggXXumnVnnNNS+8lfpTV9NGxBkPncXg25SN/MGJpVszYLKAdcI895P84AzagdE7vvMlqISZAEQSCe9cOl4mbAl7qMC/q7RouMKJ/RhEfSiN4FbsBda3jsUGSVhzLGzAgDGZg6OM8scTDzQmAhHZJFWNYyzJ+2nLLiauP09lpfRvlcgoHiOh/WX4X88EFAfZuho23MnpC0FdszpWsUnPYJyqLm/jvn5z78AYwiyTNbj/idmESKK8SOR3fol1DrWHJgf1dprzAlyhQGzS5j/zkRDz6NIxmxzQYvu/JUCM4qlTV+bDfdM6GUTHKzSJzyYjo3kVv7PHnulLZ/exyYWpfzIrGREPc71sg1+iWKc3+iNvH3aE19ilcG1zbnqi1o7RmkGkpfM3gAipKMYDw7v4EWqLqY=

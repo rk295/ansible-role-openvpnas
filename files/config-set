@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+if [[ $# -ne 2 ]]; then
+    echo "Usage: $0 <key> <value>"
+    echo ""
+    echo "This script wraps the sacli provided by OpenVPN, the difference being,"
+    echo "we only set the value if it isn't already set to the provided value."
+    echo "The intention is to be able to let ansible run commands in an idempotent"
+    echo "manner."
+    exit 1
+fi
+
+key="$1"
+value="$2"
+
+currentValue=$(jq -r '."'"$key"'"' <  <(/usr/local/openvpn_as/scripts/sacli ConfigQuery))
+
+if [[ "$currentValue" = "$value" ]]; then
+    echo "EXISTS"
+else
+    echo "SETTING"
+    /usr/local/openvpn_as/scripts/sacli --key "$key" --value "$value" ConfigPut > /dev/null
+fi
