@@ -1,8 +1,7 @@
 ---
 - hosts: test-kitchen
   become: true
-  roles:
-  - role: openvpnas-role
+  vars:
     auth_ldap_0_name: vpn.example.com
     auth_ldap_0_server_0_host: ldap.example.com
     auth_ldap_0_bind_dn: administrator@ldap.example.com
@@ -11,3 +10,7 @@
     auth_ldap_0_uname_attr: sAMAccountName
     auth_ldap_0_use_ssl: always
     auth_module_type: ldap
+  vars_files:
+  - test-cert.yml
+  roles:
+  - role: openvpnas

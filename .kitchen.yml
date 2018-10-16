@@ -28,6 +28,7 @@ transport:
   username: openvpnas
 
 provisioner:
+  additional_copy_path: test/integration/default/test-cert.yml
   ansible_connection: ssh
   ansible_sudo: true
   ansible_verbose: true

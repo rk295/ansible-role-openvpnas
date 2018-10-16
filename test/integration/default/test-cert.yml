@@ -1,0 +1,55 @@
+---
+# These are self signed dummy certificates commited to the repo
+# only for the purpose of testing the ansible role in CI. They 
+# are not deployed anywhere outside of CI and should *NOT* be 
+# used. You have been warned!
+ssl_certificate: |
+    -----BEGIN CERTIFICATE-----
+    MIIDEjCCAfoCCQCIDH92UNfseTANBgkqhkiG9w0BAQsFADBLMQswCQYDVQQGEwJV
+    SzEYMBYGA1UEAwwPdnBuLmV4YW1wbGUuY29tMSIwIAYJKoZIhvcNAQkBFhNyb2Jp
+    bkBrZWFybmV5LmNvLnVrMB4XDTE4MTAxNTExMjEzM1oXDTE5MTAxNTExMjEzM1ow
+    SzELMAkGA1UEBhMCVUsxGDAWBgNVBAMMD3Zwbi5leGFtcGxlLmNvbTEiMCAGCSqG
+    SIb3DQEJARYTcm9iaW5Aa2Vhcm5leS5jby51azCCASIwDQYJKoZIhvcNAQEBBQAD
+    ggEPADCCAQoCggEBAO7uIP+7SNQPAZQt4FPCtDOALO/KnQUwQm6O539DnB9fYVul
+    hgtEBTIESSJfTbSJhgHdDu4MsVe7Kd+UltnhtUcNPaAzsNwzUCiu2/wJlfo1Ai2n
+    WzasqBXRdJAwtkD2rwlfEpXZhv9bu5pVBEhAvJlz3UTxTkp6BbY+94osepyo+Ohh
+    Xl2SafrxCbgRZNFtVyxnQ0ubgMzSdq1Cqn2AtUAwTsEpLGyLr6RaQbgpgPzg4jqg
+    EQW15mm0lziv5kGYOALblLD/SRzhEpv/QVEurZcX1bmPqvY3AbkwQfCcCn0MTPaW
+    +/vIGtMke+TUKVRIyZgBIW0+xSETIOTq+gO1QukCAwEAATANBgkqhkiG9w0BAQsF
+    AAOCAQEAj3hYPNkl70kIrSf91bg1w61pbaVL4smP5QQtvJQx87cfzcrclVFZn/6e
+    T8aZSrJKzGv9FO6cUuThL6dO5kdFgoBw4srK9jSJS+5XqGnyFIINH+V2YmzPdBlC
+    es8D+qme6cpu855Bt7o84IijQNZh5/GtGoOLqE6XUrGMP9A2UjaDVUA2pRaWRuig
+    0utBaAVKjEHWNf3CYwnlEKx2b+1Qc/P28iItOQOeKTS2YTxsxYxFCaP8NYjQJ6CV
+    QgAE76bsUd6/0WUnT330Y9GuWnKHvFcV49tLNnSivInqTw7Y8oLBpHm0WBCCUVyP
+    l8K8i3r0On3mhSHehrj8aSOGbYD10g==
+    -----END CERTIFICATE-----
+
+ssl_private_key: |
+    -----BEGIN PRIVATE KEY-----
+    MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDu7iD/u0jUDwGU
+    LeBTwrQzgCzvyp0FMEJujud/Q5wfX2FbpYYLRAUyBEkiX020iYYB3Q7uDLFXuynf
+    lJbZ4bVHDT2gM7DcM1Aortv8CZX6NQItp1s2rKgV0XSQMLZA9q8JXxKV2Yb/W7ua
+    VQRIQLyZc91E8U5KegW2PveKLHqcqPjoYV5dkmn68Qm4EWTRbVcsZ0NLm4DM0nat
+    Qqp9gLVAME7BKSxsi6+kWkG4KYD84OI6oBEFteZptJc4r+ZBmDgC25Sw/0kc4RKb
+    /0FRLq2XF9W5j6r2NwG5MEHwnAp9DEz2lvv7yBrTJHvk1ClUSMmYASFtPsUhEyDk
+    6voDtULpAgMBAAECggEAOAyotRUsOoLire4tJ7kPKN2yrPXs6+CsVN81M0ebAkkP
+    v74OuenVBiy3M1cEFYwFYb6H2BQmLhx78DUdRjOKoQZcJI67uIxZC5IpjPB6vF1f
+    C3KtFSBfte6S15h1yLuVyC8DXx/OaW0Nj2DORlzZYW4qxBePdC031c7jpwhUIxeU
+    bHdPtUf9pjVI9Dq6zlgCbnsCLIJyCCrV/dkaK24LqBABLeJpHqJJ74uDiV/p5pAj
+    /gBhHGVDF259m+9hqtS1BbwOEsjI3MOLv1mZYR7HhFd0ECO6MNKT9nX/wrgWl/Hn
+    PiUrT43FaF/r+XY2lBmGrb0RwgfHSMa5kbh7ATCUmQKBgQD8rkjcj5RalJW2dOHc
+    rwPWeTYQinVaWpCYj321iuISMPYSUvud7+Ikvjlg7mItjs+RtPquLWJsrdaVsVuz
+    NZMEXCfech6JccZjdGr7UWftwQ5hRM2Uz1aSpbXxnWa8g0EqcgtVU++yMpiWtt8a
+    KpS3Jj2ndLdQaQ4g1BjdvP6WpwKBgQDyEZqNYly5m6jExF+JlPX2N9BgJ4udhw6l
+    H525wm07BOjBnGBCo4DewjQkenXHapH0Z1WKVFcUrlpomCFiu7h5YVjl2trTn9dN
+    wwPcDOUk9WRmCuy9/V5OWvJVgiJ3b/o9IENtB4pDjvlBo4wFXdqoQOEGSo/km4ua
+    6sm0viUb7wKBgQCPFz9pr+FqXkRd+9i/+VhqB2BHg7ErRqglzPR6bzjQ5msjO10E
+    NolRF2w06Sot9Ha1Y9Cl/EuFkfg38yUj2k30JR/qx6NlYEnhnlbLFXGOYUp8aNMm
+    1zeGelMLjYBVdtrbZ5PlcVAHEMH6b3ruPXjUMtKtVtpMrgFzM8kVIObndwKBgC3e
+    /h2arR2TDLk0yTHmI3HkA72k4MUaKcFKq3XfDRnpBT5jJq6aEzqjLIRZHGaMoFnj
+    Fweekd3eaE13vqPaFMwTkWgFQABoQsF+mgWh/+4v/jWEDna2Q5+vhkqD3Yoqkw3w
+    Rjar/hxtRHiWyFrf/SZzHPE3Qes9OohBw7VXburLAoGBAKLAF3VSKG+pko6l4jQF
+    UGyblApapvhV+O1nEmd5iXZtm/VwCUivd7g9A0X11r8RTNCQrPjNJJPpNKTWVp6b
+    8nIPvYjlhY5Jv1jfDHVQdz+mjy2lcSCOuerFp8TTCpzDFx0TYlpI8bJgArb0axE7
+    /zVOjwAvGq/kFlN0UghbABLz
+    -----END PRIVATE KEY-----
