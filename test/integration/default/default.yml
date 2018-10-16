@@ -13,4 +13,4 @@
   vars_files:
   - test-cert.yml
   roles:
-  - role: openvpnas-role
+  - role: openvpnas
