@@ -1,7 +1,5 @@
 ---
 # This is the master map of possible sacli options to ansible role options
-# Its basically a friendly map. Which now I come to think of it, might not 
-# be needed
 keys:
   - { key: "admin_ui.https.ip_address", value: "admin_ui_https_ip_address"}
   - { key: "admin_ui.https.port", value: "admin_ui_https_port"}
