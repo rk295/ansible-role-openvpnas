@@ -2,28 +2,28 @@
 
 [![Build Status](https://travis-ci.org/rk295/openvpnas-role.svg?branch=master)](https://travis-ci.org/rk295/openvpnas-role)
 
-This role enables idempotent configuration of the [OpenVPN Access Server] via the vendor provided [sacli] utility.
+This role enables idempotent configuration of the [OpenVPN Access Server] via the vendor provided [sacli] utility and optionally copies in the SSL cert and key.
 
 Currently it supports all the keys available via the `ConfigPut` option to `sacli`, but none of the other configurable items. Any PR's adding extra functionality will be welcomed.
 
 ## Details
 
-To ensure we don't all the tasks every time Ansible runs, we deploy a simple idempotent wrapper `files/config-set` to the host on the first run. This script checks the current `value` for a given `key` only setting a new `value` if it differs from the current configuration.
+To ensure we don't run all the tasks every time Ansible runs, we deploy a simple idempotent wrapper `files/config-set` to the host on the first run (this uses jq, which the role will install). This script checks the current `value` for a given `key` only setting a new `value` if it differs from the current configuration.
 
 The full list of options to `ConfigPut` is held in a list of maps in `vars/main.yml`, this enables Ansible friendly variable names to be used, these being looked up in that map at run time. If you find an option I've missed, or one that lacks documentation in the [Variables](#variables) section below, please feel free to submit a PR.
 
 ## Requirements
 
-Role Centos/Amazon linux specific
+Currently it is intended to be run against the OpenVPN AS Appliance as provided by OpenVPN on the AWS Marketplace. Any PRs which add support for a manually installed instance of OpenVPN AS are welcome.
 
 ## Variables
 
-Two variables exist, which are not passed directly through to `sacli`.
+Two variables exist, which are not passed directly through to `sacli`. These are the SSL cert and key for the web interface.
 
 * `ssl_certificate` - The SSL certificate for the web interface.
 * `ssl_private_key` - The SSL key for the web interface.
 
-**Note**: It is expected the SSL key and cert will be provided via an [Ansible Vault] or similar.
+**Note**: It is expected the SSL cert and key will be provided via an [Ansible Vault] or similar.
 
 All of this section are passed verbatim through to `sacli`.
 
