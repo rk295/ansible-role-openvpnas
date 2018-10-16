@@ -40,8 +40,8 @@ provisioner:
     sudo /bin/sh -c '\
       systemctl stop apt-daily ;\
       while fuser /var/lib/dpkg/lock > /dev/null 2>&1 ;do \
-        echo "waiting for apt lock to be released, sleeping for 1s"; \
-        sleep 30; \
+        echo "waiting for apt lock to be released, sleeping for 3s"; \
+        sleep 3; \
       done'
   hosts: test-kitchen
   name: ansible_playbook
