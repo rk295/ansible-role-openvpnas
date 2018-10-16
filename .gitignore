@@ -1,2 +1,4 @@
 .kitchen
 .ssh/ssh_keys.tar
+.ssh/travis_key
+.ssh/travis_key.pub
