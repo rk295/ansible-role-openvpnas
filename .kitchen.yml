@@ -11,7 +11,6 @@ driver:
     Creator: "test-kitchen"
   vpc_id: "vpc-281db64f"
 
-# AMI this ansible inside
 platforms:
   - name: openvpn-as
     driver:
@@ -33,7 +32,7 @@ provisioner:
   ansible_sudo: true
   ansible_verbose: true
   ansible_verbosity: 2
-  # The OpenVPN AS AMI has a "apt upgrade" which runs on first boot. This causes
+  # The OpenVPN AS AMI has an "apt upgrade" which runs on first boot. This causes
   # ansible-kitchen to fail to install ansible. This loop is a a horrible attempt
   # at blocking the ansible install until that upgrade releases the apt lock.
   custom_pre_install_command: |
@@ -46,7 +45,6 @@ provisioner:
       done'
   hosts: test-kitchen
   name: ansible_playbook
-  # private_key: .ssh/travis_key
   require_ansible_omnibus: false
   require_ansible_repo: true
   require_chef_for_busser: false
@@ -58,8 +56,6 @@ verifier:
 
 suites:
   - name: default
-    # env_vars:
-    #   SSH_KEY: .ssh/travis_key
     verifier:
       patterns:
-        - roles/openvpnas/test/integration/default/serverspec/default_spec.rb
+        - roles/ansible-role-openvpnas/test/integration/default/serverspec/default_spec.rb
