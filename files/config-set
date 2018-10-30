@@ -16,9 +16,13 @@ fi
 key="$1"
 value="$2"
 
+# Sometrimes the inbound value seems to have a trailing newline,
+# which makes the comparison below fail. Perl to the rescue!
+compare="$(perl -pe 'chomp if eof' <<< $2)"
+
 currentValue=$(jq -r '."'"$key"'"' <  <(/usr/local/openvpn_as/scripts/sacli ConfigQuery))
 
-if [[ "$currentValue" = "$value" ]]; then
+if [[ "$currentValue" = "$compare" ]]; then
     echo "EXISTS"
 else
     echo "SETTING"

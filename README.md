@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/rk295/ansible-role-openvpnas.svg?branch=master)](https://travis-ci.org/rk295/ansible-role-openvpnas)
 
-This role enables idempotent configuration of the [OpenVPN Access Server] via the vendor provided [sacli] utility and optionally copies in the SSL cert and key.
+This role enables idempotent configuration of the [OpenVPN Access Server] via the vendor provided [sacli] utility.
 
 Currently it supports all the keys available via the `ConfigPut` option to `sacli`, but none of the other configurable items. Any PR's adding extra functionality will be welcomed.
 
@@ -17,11 +17,6 @@ The full list of options to `ConfigPut` is held in a list of maps in `vars/main.
 Currently it is intended to be run against the OpenVPN AS Appliance as provided by OpenVPN on the AWS Marketplace. Any PRs which add support for a manually installed instance of OpenVPN AS are welcome.
 
 ## Variables
-
-Two variables exist, which are not passed directly through to `sacli`. These are the SSL cert and key for the web interface.
-
-* `ssl_certificate` - The SSL certificate for the web interface.
-* `ssl_private_key` - The SSL key for the web interface.
 
 **Note**: It is expected the SSL cert and key will be provided via an [Ansible Vault] or similar.
 
@@ -44,9 +39,12 @@ All of this section are passed verbatim through to `sacli`.
 * `auth_pam_0_service` - 
 * `auth_radius_0_acct_enable` - 
 * `auth_radius_0_name` - 
+* `cs_ca_bundle` - The CA Bundle to use for the web server
+* `cs_cert` - The TLS Certificate to use for the web server
 * `cs_cws_proto_v2` - 
 * `cs_https_ip_address` - 
 * `cs_https_port` - 
+* `cs_priv_key` - The TLS Private key to use for the web server
 * `cs_prof_sign_web` - 
 * `host_name` - 
 * `sa_initial_run_groups_0` - 
@@ -104,7 +102,7 @@ kitchen test
 
 ## Example Playbook
 
-In the example below `certificate.yml` is an [Ansible Vault], contains the `ssl_certificate` and `ssl_private_key` variables.
+In the example below `certificate.yml` is an [Ansible Vault], contains the `cs_cert` and `cs_priv_key` variables.
 
 ```yaml
 ---

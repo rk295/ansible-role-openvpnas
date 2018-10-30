@@ -18,9 +18,12 @@ keys:
   - { key: "auth.pam.0.service", value: "auth_pam_0_service"}
   - { key: "auth.radius.0.acct_enable", value: "auth_radius_0_acct_enable"}
   - { key: "auth.radius.0.name", value: "auth_radius_0_name"}
+  - { key: "cs.ca_bundle", value: "cs_ca_bundle"}
+  - { key: "cs.cert", value: "cs_cert"}
   - { key: "cs.cws_proto_v2", value: "cs_cws_proto_v2"}
   - { key: "cs.https.ip_address", value: "cs_https_ip_address"}
   - { key: "cs.https.port", value: "cs_https_port"}
+  - { key: "cs.priv_key", value: "cs_priv_key"}
   - { key: "cs.prof_sign_web", value: "cs_prof_sign_web"}
   - { key: "host.name", value: "host_name"}
   - { key: "sa.initial_run_groups.0", value: "sa_initial_run_groups_0"}
