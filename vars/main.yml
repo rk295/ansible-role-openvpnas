@@ -4,6 +4,7 @@ keys:
   - { key: "admin_ui.https.ip_address", value: "admin_ui_https_ip_address"}
   - { key: "admin_ui.https.port", value: "admin_ui_https_port"}
   - { key: "aui.eula_version", value: "aui_eula_version"}
+  - { key: "auth.ldap.0.add_req", value: "auth_ldap_0_add_req"}
   - { key: "auth.ldap.0.bind_dn", value: "auth_ldap_0_bind_dn"}
   - { key: "auth.ldap.0.bind_pw", value: "auth_ldap_0_bind_pw"}
   - { key: "auth.ldap.0.name", value: "auth_ldap_0_name"}
