@@ -9,7 +9,6 @@ keys:
   - { key: "auth.ldap.0.bind_pw", value: "auth_ldap_0_bind_pw"}
   - { key: "auth.ldap.0.name", value: "auth_ldap_0_name"}
   - { key: "auth.ldap.0.server.0.host", value: "auth_ldap_0_server_0_host"}
-  - { key: "auth.ldap.0.server.1.host", value: "auth_ldap_0_server_1_host"}
   - { key: "auth.ldap.0.ssl_verify", value: "auth_ldap_0_ssl_verify"}
   - { key: "auth.ldap.0.timeout", value: "auth_ldap_0_timeout"}
   - { key: "auth.ldap.0.uname_attr", value: "auth_ldap_0_uname_attr"}
@@ -19,9 +18,18 @@ keys:
   - { key: "auth.pam.0.service", value: "auth_pam_0_service"}
   - { key: "auth.radius.0.acct_enable", value: "auth_radius_0_acct_enable"}
   - { key: "auth.radius.0.name", value: "auth_radius_0_name"}
+  - { key: "cs.admin_only", value: "cs_admin_only"}
   - { key: "cs.ca_bundle", value: "cs_ca_bundle"}
   - { key: "cs.cert", value: "cs_cert"}
   - { key: "cs.cws_proto_v2", value: "cs_cws_proto_v2"}
+  - { key: "cs.cws_ui_offer.android", value: "cs_cws_ui_offer_android"}
+  - { key: "cs.cws_ui_offer.autologin", value: "cs_cws_ui_offer_autologin"}
+  - { key: "cs.cws_ui_offer.ios", value: "cs_cws_ui_offer_ios"}
+  - { key: "cs.cws_ui_offer.linux", value: "cs_cws_ui_offer_linux"}
+  - { key: "cs.cws_ui_offer.mac", value: "cs_cws_ui_offer_mac"}
+  - { key: "cs.cws_ui_offer.server_locked", value: "cs_cws_ui_offer_server_locked"}
+  - { key: "cs.cws_ui_offer.user_locked", value: "cs_cws_ui_offer_user_locked"}
+  - { key: "cs.cws_ui_offer.win", value: "cs_cws_ui_offer_win"}
   - { key: "cs.https.ip_address", value: "cs_https_ip_address"}
   - { key: "cs.https.port", value: "cs_https_port"}
   - { key: "cs.priv_key", value: "cs_priv_key"}
@@ -46,6 +54,7 @@ keys:
   - { key: "vpn.server.daemon.tcp.port", value: "vpn_server_daemon_tcp_port"}
   - { key: "vpn.server.daemon.udp.n_daemons", value: "vpn_server_daemon_udp_n_daemons"}
   - { key: "vpn.server.daemon.udp.port", value: "vpn_server_daemon_udp_port"}
+  - { key: "vpn.server.google_auth.enable", value: "vpn_server_google_auth_enable"}
   - { key: "vpn.server.group_pool.0", value: "vpn_server_group_pool_0"}
   - { key: "vpn.server.nat.masquerade", value: "vpn_server_nat_masquerade"}
   - { key: "vpn.server.port_share.enable", value: "vpn_server_port_share_enable"}
@@ -56,3 +65,4 @@ keys:
   - { key: "vpn.server.routing.private_network.0", value: "vpn_server_routing_private_network_0"}
   - { key: "vpn.tls_refresh.do_reauth", value: "vpn_tls_refresh_do_reauth"}
   - { key: "vpn.tls_refresh.interval", value: "vpn_tls_refresh_interval"}
+  - { key: "xmlrpc.relay_level", value: "xmlrpc_relay_level"}
