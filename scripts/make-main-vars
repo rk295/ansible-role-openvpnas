@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Quick hack script to automatically generate the vars/main.yaml file from the JSON
+# output of `./sacli ConfigQuery`.
+#
+# Reads from stdin, outputs yaml on stdout. Use like this:
+#
+#  ./sacli ConfigQuery | ./make-main-vars > vars/main.yaml
+#
+set -euo pipefail
+IFS=$'\n\t'
+
+jq -r 'keys[] ' \
+    | awk '
+        BEGIN { print "---\n# This is the master map of possible sacli options to ansible role options\nkeys:"}
+        {
+            value=$0;
+            gsub(/\./, "_", value)
+            print "  - { key: \""$0"\", value: \""value"\"}"}
+        '
