@@ -25,6 +25,7 @@ All of this section are passed verbatim through to `sacli`.
 * `admin_ui_https_ip_address` - 
 * `admin_ui_https_port` - 
 * `aui_eula_version` - 
+* `auth_ldap_0_add_req` - 
 * `auth_ldap_0_bind_dn` - Username to connect to (eg: `administrator@ldap.example.com`)
 * `auth_ldap_0_bind_pw` - Password to connect with
 * `auth_ldap_0_name` - Friendly name of the LDAP server
@@ -39,9 +40,18 @@ All of this section are passed verbatim through to `sacli`.
 * `auth_pam_0_service` - 
 * `auth_radius_0_acct_enable` - 
 * `auth_radius_0_name` - 
+* `cs_admin_only` - 
 * `cs_ca_bundle` - The CA Bundle to use for the web server
 * `cs_cert` - The TLS Certificate to use for the web server
 * `cs_cws_proto_v2` - 
+* `cs_cws_ui_offer_android` - 
+* `cs_cws_ui_offer_autologin` - 
+* `cs_cws_ui_offer_ios` - 
+* `cs_cws_ui_offer_linux` - 
+* `cs_cws_ui_offer_mac` - 
+* `cs_cws_ui_offer_server_locked` - 
+* `cs_cws_ui_offer_user_locked` - 
+* `cs_cws_ui_offer_win` - 
 * `cs_https_ip_address` - 
 * `cs_https_port` - 
 * `cs_priv_key` - The TLS Private key to use for the web server
@@ -66,6 +76,7 @@ All of this section are passed verbatim through to `sacli`.
 * `vpn_server_daemon_tcp_port` - 
 * `vpn_server_daemon_udp_n_daemons` - 
 * `vpn_server_daemon_udp_port` - 
+* `vpn_server_google_auth_enable` - 
 * `vpn_server_group_pool_0` - 
 * `vpn_server_nat_masquerade` - 
 * `vpn_server_port_share_enable` - 
@@ -76,6 +87,7 @@ All of this section are passed verbatim through to `sacli`.
 * `vpn_server_routing_private_network_0` - 
 * `vpn_tls_refresh_do_reauth` - 
 * `vpn_tls_refresh_interval` - 
+* `xmlrpc_relay_level` - 
 
 ## Dependencies
 
