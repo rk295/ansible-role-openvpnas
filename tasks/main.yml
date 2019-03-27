@@ -1,3 +1,4 @@
+---
 - name: install jq
   package:
     name: jq
@@ -11,15 +12,14 @@
     group: root
     mode: 0755
 
-# This is the guts of the task. It loops the keys list (defined in vars/main.yml)
-# For each key in the list, then takes the value of that object, and uses the 
-# variable passed into the role of that name.
+# This is the guts of the task. It loops the keys list (defined in
+# vars/main.yml) For each key in the list, then takes the value of that
+# object, and uses the variable passed into the role of that name.
 # (Escaped quotes are to ensure the second param is passed as a single option)
 - name: Set the sacli options
-  command:  "config-set {{ item.key }} \"{{ vars[item.value] }}\""
+  command: "config-set {{ item.key }} \"{{ vars[item.value] }}\""
   register: output
   changed_when: output.stdout != 'EXISTS'
   notify: restart
   loop: "{{ keys }}"
   when: vars[item.value] is defined
-

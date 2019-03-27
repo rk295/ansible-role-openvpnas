@@ -16,5 +16,5 @@ jq -r 'keys[] ' \
         {
             value=$0;
             gsub(/\./, "_", value)
-            print "  - { key: \""$0"\", value: \""value"\"}"}
+            print "  - {key: \""$0"\", value: \""value"\"}"}
         '

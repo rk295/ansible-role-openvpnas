@@ -1,7 +1,7 @@
 ---
 # These are self signed dummy certificates commited to the repo
-# only for the purpose of testing the ansible role in CI. They 
-# are not deployed anywhere outside of CI and should *NOT* be 
+# only for the purpose of testing the ansible role in CI. They
+# are not deployed anywhere outside of CI and should *NOT* be
 # used. You have been warned!
 cs_cert: |
     -----BEGIN CERTIFICATE-----

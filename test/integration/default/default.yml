@@ -11,6 +11,6 @@
     auth_ldap_0_use_ssl: always
     auth_module_type: ldap
   vars_files:
-  - test-cert.yml
+    - test-cert.yml
   roles:
-  - role: ansible-role-openvpnas
+    - role: ansible-role-openvpnas

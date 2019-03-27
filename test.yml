@@ -14,6 +14,6 @@
   # vars_files:
   #   - test-cert.yml
   tasks:
-  - include: tasks/main.yml
+    - include: tasks/main.yml
   handlers:
-  - include: handlers/main.yml
+    - include: handlers/main.yml

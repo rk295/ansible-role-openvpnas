@@ -32,9 +32,10 @@ provisioner:
   ansible_sudo: true
   ansible_verbose: true
   ansible_verbosity: 2
-  # The OpenVPN AS AMI has an "apt upgrade" which runs on first boot. This causes
-  # ansible-kitchen to fail to install ansible. This loop is a a horrible attempt
-  # at blocking the ansible install until that upgrade releases the apt lock.
+  # The OpenVPN AS AMI has an "apt upgrade" which runs on first boot. This
+  # causes ansible-kitchen to fail to install ansible. This loop is a a
+  # horrible attempt at blocking the ansible install until that upgrade
+  # releases the apt lock.
   custom_pre_install_command: |
     echo "Looping, waiting for dpkg lock to be released" ;\
     sudo /bin/sh -c '\
@@ -51,7 +52,7 @@ provisioner:
 
 verifier:
   name: serverspec
-  use_sudo: yes
+  use_sudo: true
   sudo_path: true
 
 suites:
