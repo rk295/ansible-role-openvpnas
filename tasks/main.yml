@@ -17,7 +17,7 @@
 # object, and uses the variable passed into the role of that name.
 # (Escaped quotes are to ensure the second param is passed as a single option)
 - name: Set the sacli options
-  command: "config-set {{ item.key }} \"{{ vars[item.value] }}\""
+  command: "config-set {{ item.key }} \"{{ lookup('vars', item.value) }}\""
   register: output
   changed_when: output.stdout != 'EXISTS'
   notify: restart
