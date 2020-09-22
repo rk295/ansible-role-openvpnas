@@ -88,6 +88,9 @@ All of this section are passed verbatim through to `sacli`.
 * `vpn_tls_refresh_do_reauth` - 
 * `vpn_tls_refresh_interval` - 
 * `xmlrpc_relay_level` - 
+- `vpn_server_dhcp_option_dns_0` -
+- `vpn_server_dhcp_option_domain` -
+
 
 ## Dependencies
 
