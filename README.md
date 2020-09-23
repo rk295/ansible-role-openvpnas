@@ -124,8 +124,8 @@ In the example below `certificate.yml` is an [Ansible Vault], contains the `cs_c
 - hosts: openvpnas
   become: true
   vars:
-    ldap_auth_ldap_0_namename: vpn.example.com
-    ldap_auth_ldap_0_server_0_hostserver_0: ldap.example.com
+    auth_ldap_0_name: vpn.example.com
+    auth_ldap_0_server_0_host: ldap.example.com
     auth_ldap_0_bind_dn: administrator@ldap.example.com
     auth_ldap_0_bind_pw: superstrongpassword
     auth_ldap_0_users_base_dn: cn=Users,dc=ldap,dc=example,dc=com
