@@ -66,3 +66,5 @@ keys:
   - {key: "vpn.tls_refresh.do_reauth", value: "vpn_tls_refresh_do_reauth"}
   - {key: "vpn.tls_refresh.interval", value: "vpn_tls_refresh_interval"}
   - {key: "xmlrpc.relay_level", value: "xmlrpc_relay_level"}
+  - {key: "vpn.server.dhcp_option.dns.0", value: "vpn_server_dhcp_option_dns_0"}
+  - {key: "vpn.server.dhcp_option.domain", value: "vpn_server_dhcp_option_domain"}
