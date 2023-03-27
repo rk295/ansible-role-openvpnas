@@ -18,6 +18,18 @@ keys:
   - {key: "auth.pam.0.service", value: "auth_pam_0_service"}
   - {key: "auth.radius.0.acct_enable", value: "auth_radius_0_acct_enable"}
   - {key: "auth.radius.0.name", value: "auth_radius_0_name"}
+  - {key: "auth.saml.0.authncontexts", value: "auth_saml_0_authncontexts"}
+  - {key: "auth.saml.0.enable", value: "auth_saml_0_enable"}
+  - {key: "auth.saml.0.forceauthn", value: "auth_saml_0_forceauthn"}
+  - {key: "auth.saml.0.idp_cert", value: "auth_saml_0_idp_cert"}
+  - {key: "auth.saml.0.idp_entityid", value: "auth_saml_0_idp_entityid"}
+  - {key: "auth.saml.0.idp_logout_endpoint", value: "auth_saml_0_idp_logout_endpoint"}
+  - {key: "auth.saml.0.idp_signon_endpoint", value: "auth_saml_0_idp_signon_endpoint"}
+  - {key: "auth.saml.0.requestauthncontext", value: "auth_saml_0_requestauthncontext"}
+  - {key: "auth.saml.0.sp_cert", value: "auth_saml_0_sp_cert"}
+  - {key: "auth.saml.0.sp_hostname", value: "auth_saml_0_sp_hostname"}
+  - {key: "auth.saml.0.sp_key", value: "auth_saml_0_sp_key"}
+  - {key: "auth.saml.0.timeout", value: "auth_saml_0_timeout"}
   - {key: "cs.admin_only", value: "cs_admin_only"}
   - {key: "cs.ca_bundle", value: "cs_ca_bundle"}
   - {key: "cs.cert", value: "cs_cert"}
