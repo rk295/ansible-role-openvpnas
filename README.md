@@ -22,72 +22,84 @@ Currently it is intended to be run against the OpenVPN AS Appliance as provided 
 
 All of this section are passed verbatim through to `sacli`.
 
-* `admin_ui_https_ip_address` - 
-* `admin_ui_https_port` - 
-* `aui_eula_version` - 
-* `auth_ldap_0_add_req` - 
+* `admin_ui_https_ip_address` -
+* `admin_ui_https_port` -
+* `aui_eula_version` -
+* `auth_ldap_0_add_req` -
 * `auth_ldap_0_bind_dn` - Username to connect to (eg: `administrator@ldap.example.com`)
 * `auth_ldap_0_bind_pw` - Password to connect with
 * `auth_ldap_0_name` - Friendly name of the LDAP server
 * `auth_ldap_0_server_0_host` - 1st LDAP server hostname
 * `auth_ldap_0_server_1_host` - 2nd  LDAP server hostname
 * `auth_ldap_0_ssl_verify` - Should SSL be enabled. Must be one of always', 'never', 'adaptive. Defaults to `always`.
-* `auth_ldap_0_timeout` - 
+* `auth_ldap_0_timeout` -
 * `auth_ldap_0_uname_attr` - The Username Attribute. This is often uid for generic LDAP servers and sAMAccountName for Active Directory LDAP servers.
 * `auth_ldap_0_use_ssl` - Should SSL be enabled. Must be one of always', 'never', 'adaptive. Defaults to `always`.
 * `auth_ldap_0_users_base_dn` - Search DN (eg: `cn=Users,dc=ldap,dc=example,dc=com`)
 * `auth_module_type` - LDAP/Radiu/PAM
-* `auth_pam_0_service` - 
-* `auth_radius_0_acct_enable` - 
-* `auth_radius_0_name` - 
-* `cs_admin_only` - 
+* `auth_pam_0_service` -
+* `auth_radius_0_acct_enable` -
+* `auth_radius_0_name` -
+* `auth_saml_0_authncontexts` - 
+* `auth_saml_0_enable` - 
+* `auth_saml_0_forceauthn` - 
+* `auth_saml_0_idp_cert` - 
+* `auth_saml_0_idp_entityid` - 
+* `auth_saml_0_idp_logout_endpoint` - 
+* `auth_saml_0_idp_signon_endpoint` - 
+* `auth_saml_0_requestauthncontext` - 
+* `auth_saml_0_sp_cert` - 
+* `auth_saml_0_sp_hostname` - 
+* `auth_saml_0_sp_key` - 
+* `auth_saml_0_timeout` - 
+* `cs_admin_only` -
 * `cs_ca_bundle` - The CA Bundle to use for the web server
 * `cs_cert` - The TLS Certificate to use for the web server
-* `cs_cws_proto_v2` - 
-* `cs_cws_ui_offer_android` - 
-* `cs_cws_ui_offer_autologin` - 
-* `cs_cws_ui_offer_ios` - 
-* `cs_cws_ui_offer_linux` - 
-* `cs_cws_ui_offer_mac` - 
-* `cs_cws_ui_offer_server_locked` - 
-* `cs_cws_ui_offer_user_locked` - 
-* `cs_cws_ui_offer_win` - 
-* `cs_https_ip_address` - 
-* `cs_https_port` - 
+* `cs_cws_proto_v2` -
+* `cs_cws_ui_offer_android` -
+* `cs_cws_ui_offer_autologin` -
+* `cs_cws_ui_offer_ios` -
+* `cs_cws_ui_offer_linux` -
+* `cs_cws_ui_offer_mac` -
+* `cs_cws_ui_offer_server_locked` -
+* `cs_cws_ui_offer_user_locked` -
+* `cs_cws_ui_offer_win` -
+* `cs_https_ip_address` -
+* `cs_https_port` -
 * `cs_priv_key` - The TLS Private key to use for the web server
-* `cs_prof_sign_web` - 
-* `host_name` - 
-* `sa_initial_run_groups_0` - 
-* `sa_initial_run_groups_1` - 
-* `vpn_client_basic` - 
-* `vpn_client_config_text` - 
-* `vpn_client_routing_inter_client` - 
-* `vpn_client_routing_reroute_dns` - 
-* `vpn_client_routing_reroute_gw` - 
-* `vpn_daemon_0_client_netmask_bits` - 
-* `vpn_daemon_0_client_network` - 
-* `vpn_daemon_0_listen_ip_address` - 
-* `vpn_daemon_0_listen_port` - 
-* `vpn_daemon_0_listen_protocol` - 
-* `vpn_daemon_0_server_ip_address` - 
-* `vpn_server_config_text` - 
-* `vpn_server_daemon_enable` - 
-* `vpn_server_daemon_tcp_n_daemons` - 
-* `vpn_server_daemon_tcp_port` - 
-* `vpn_server_daemon_udp_n_daemons` - 
-* `vpn_server_daemon_udp_port` - 
-* `vpn_server_google_auth_enable` - 
-* `vpn_server_group_pool_0` - 
-* `vpn_server_nat_masquerade` - 
-* `vpn_server_port_share_enable` - 
-* `vpn_server_port_share_ip_address` - 
-* `vpn_server_port_share_port` - 
-* `vpn_server_port_share_service` - 
-* `vpn_server_routing_private_access` - 
-* `vpn_server_routing_private_network_0` - 
-* `vpn_tls_refresh_do_reauth` - 
-* `vpn_tls_refresh_interval` - 
-* `xmlrpc_relay_level` - 
+* `cs_prof_sign_web` -
+* `host_name` -
+* `sa_initial_run_groups_0` -
+* `sa_initial_run_groups_1` -
+* `vpn_client_basic` -
+* `vpn_client_config_text` -
+* `vpn_client_routing_inter_client` -
+* `vpn_client_routing_reroute_dns` -
+* `vpn_client_routing_reroute_gw` -
+* `vpn_daemon_0_client_netmask_bits` -
+* `vpn_daemon_0_client_network` -
+* `vpn_daemon_0_listen_ip_address` -
+* `vpn_daemon_0_listen_port` -
+* `vpn_daemon_0_listen_protocol` -
+* `vpn_daemon_0_server_ip_address` -
+* `vpn_server_config_text` -
+* `vpn_server_daemon_enable` -
+* `vpn_server_daemon_tcp_n_daemons` -
+* `vpn_server_daemon_tcp_port` -
+* `vpn_server_daemon_udp_n_daemons` -
+* `vpn_server_daemon_udp_port` -
+* `vpn_server_google_auth_enable` -
+* `vpn_server_group_pool_0` -
+* `vpn_server_nat_masquerade` -
+* `vpn_server_port_share_enable` -
+* `vpn_server_port_share_ip_address` -
+* `vpn_server_port_share_port` -
+* `vpn_server_port_share_service` -
+* `vpn_server_routing_private_access` -
+* `vpn_server_routing_private_network_0` -
+* `vpn_tls_refresh_do_reauth` -
+* `vpn_tls_refresh_interval` -
+* `xmlrpc_relay_level` -
 - `vpn_server_dhcp_option_dns_0` -
 - `vpn_server_dhcp_option_domain` -
 
